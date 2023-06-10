@@ -51,7 +51,7 @@
                     <div class="d-flex flex-column">
                         <img class="img-fluid w-75 align-self-end" src="img/about.png" alt="about image">
                         <div class="w-50 bg-secondary p-5" style="margin-top: -25%;">
-                            <h1 class="text-uppercase text-primary mb-3">10 Years</h1>
+                            <h1 class="text-uppercase text-primary mb-3">{{$data['abouts'][0]["experience"]}} Years</h1>
                             <h2 class="text-uppercase mb-0">Experience</h2>
                         </div>
                     </div>
@@ -59,23 +59,17 @@
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                     <p class="d-inline-block bg-secondary text-primary py-1 px-4">About Us</p>
                     <h1 class="text-uppercase mb-4">More Than Just A Haircut. Learn More About Us!</h1>
-                    <p>We good to see you here. You want to know about us so, let's get start</p>
-                    <p class="mb-4">Whether you want to get a simple, classic hair cut or you want to get a personalized
-                        look from the stylists, Cutting Crew is always here for you. This salon offers hairstylists and
-                        a range of great services here, also provide recommendation's so that you can get the
-                        best-recommended hairstyles suiting your personality. Because we believe people go to salons to
-                        look a certain way but peoples go to Cutting Crew to feel a certain way.
-                    </p>
+                    <p>{{$data['abouts'][0]["description"]}}</p>
                     <div class="row g-4">
                         <div class="col-md-6">
-                            <h3 class="text-uppercase mb-3">Since 2013</h3>
-                            <p class="mb-0">Cutting Crew is located in Gulberg III, Lahore since the year 2013.</p>
+                            <h3 class="text-uppercase mb-3">Since {{$data['abouts'][0]["since"]}}</h3>
+                            <p class="mb-0">Cutting Crew is located in Gulberg III, Lahore since the year {{$data['abouts'][0]["since"]}}.</p>
                         </div>
                         <div class="col-md-6">
-                            <h3 class="text-uppercase mb-3">1000+ clients</h3>
+                            <h3 class="text-uppercase mb-3">{{$data['abouts'][0]["client"]}}+ clients</h3>
                             <p class="mb-0">As we known for men's high quality beauty and hair salon. Till now we served
                                 our
-                                more than 1000+ clients.</p>
+                                more than {{$data['abouts'][0]["client"]}}+ clients.</p>
                         </div>
                     </div>
                 </div>
@@ -149,20 +143,6 @@
                         <a class="btn btn-square" href=""><i class="fa fa-plus text-primary"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item position-relative overflow-hidden bg-secondary d-flex h-100 p-5 ps-0">
-                        <div class="bg-dark d-flex flex-shrink-0 align-items-center justify-content-center"
-                            style="width: 60px; height: 60px;">
-                            <img class="img-fluid" src="img/facial.png" alt="">
-                        </div>
-                        <div class="ps-4">
-                            <h3 class="text-uppercase mb-3">Facials</h3>
-                            <p>Essential facials and peels<br>Sports massage<br>Deep tissue massage</p>
-                            <span class="text-uppercase text-primary">From Rs. 1000</span>
-                        </div>
-                        <a class="btn btn-square" href=""><i class="fa fa-plus text-primary"></i></a>
-                    </div>
-                </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="service-item position-relative overflow-hidden bg-secondary d-flex h-100 p-5 ps-0">
                         <div class="bg-dark d-flex flex-shrink-0 align-items-center justify-content-center"
@@ -177,6 +157,22 @@
                         <a class="btn btn-square" href=""><i class="fa fa-plus text-primary"></i></a>
                     </div>
                 </div>
+                @foreach($data['services'] as $service)
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item position-relative overflow-hidden bg-secondary d-flex h-100 p-5 ps-0">
+                        <div class="bg-dark d-flex flex-shrink-0 align-items-center justify-content-center"
+                            style="width: 60px; height: 60px;">
+                            <img class="img-fluid" src="{{asset('img').'/'.$service['logo']}}" alt="">
+                        </div>
+                        <div class="ps-4">
+                            <h3 class="text-uppercase mb-3">{{$service["name"]}}</h3>
+                            <p>{{$service["description"]}}</p>
+                            <span class="text-uppercase text-primary">From Rs. {{$service["price"]}}</span>
+                        </div>
+                        <a class="btn btn-square" href=""><i class="fa fa-plus text-primary"></i></a>
+                    </div>
+                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -209,13 +205,15 @@
                                 <span class="text-uppercase text-primary">Rs. 1000</span>
                             </div>
                             <div class="d-flex justify-content-between border-bottom py-2">
-                                <h6 class="text-uppercase mb-0">facials</h6>
-                                <span class="text-uppercase text-primary">Rs. 1000</span>
-                            </div>
-                            <div class="d-flex justify-content-between py-2">
                                 <h6 class="text-uppercase mb-0">nails</h6>
                                 <span class="text-uppercase text-primary">Rs. 1500</span>
                             </div>
+                            @foreach($data['services'] as $service)
+                            <div class="d-flex justify-content-between border-bottom py-2">
+                                <h6 class="text-uppercase mb-0">{{$service["name"]}}</h6>
+                                <span class="text-uppercase text-primary">Rs. {{$service["price"]}}</span>
+                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -286,10 +284,11 @@
                         </div>
                     </div>
                 </div>
+                @foreach($data['barbers'] as $barber)
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="team-item">
                         <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/team4.png" alt="">
+                            <img class="img-fluid" src="{{asset('img').'/'.$barber['image']}}" alt="">
                             <div class="team-social">
                                 <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
@@ -297,11 +296,12 @@
                             </div>
                         </div>
                         <div class="bg-secondary text-center p-4">
-                            <h5 class="text-uppercase">Mujeeb Arshad</h5>
-                            <span class="text-primary">Senior Barber</span>
+                            <h5 class="text-uppercase">{{$barber['name']}}</h5>
+                            <span class="text-primary">{{$barber['designation']}}</span>
                         </div>
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -324,31 +324,31 @@
                         <div>
                             <div class="d-flex justify-content-between border-bottom py-2">
                                 <h6 class="text-uppercase mb-0">Monday</h6>
-                                <span class="text-uppercase">09 AM - 11 PM</span>
+                                <span class="text-uppercase">{{$data['workings'][0]["monday1"]}} AM - {{$data['workings'][0]["monday2"]}} PM</span>
                             </div>
                             <div class="d-flex justify-content-between border-bottom py-2">
                                 <h6 class="text-uppercase mb-0">Tuesday</h6>
-                                <span class="text-uppercase">09 AM - 11 PM</span>
+                                <span class="text-uppercase">{{$data['workings'][0]["tuesday1"]}} AM - {{$data['workings'][0]["tuesday2"]}} PM</span>
                             </div>
                             <div class="d-flex justify-content-between border-bottom py-2">
                                 <h6 class="text-uppercase mb-0">Wednesday</h6>
-                                <span class="text-uppercase">09 AM - 11 PM</span>
+                                <span class="text-uppercase">{{$data['workings'][0]["wednesday1"]}} AM - {{$data['workings'][0]["wednesday2"]}} PM</span>
                             </div>
                             <div class="d-flex justify-content-between border-bottom py-2">
                                 <h6 class="text-uppercase mb-0">Thursday</h6>
-                                <span class="text-uppercase">09 AM - 11 PM</span>
+                                <span class="text-uppercase">{{$data['workings'][0]["thursday1"]}} AM - {{$data['workings'][0]["thursday2"]}} PM</span>
                             </div>
                             <div class="d-flex justify-content-between border-bottom py-2">
                                 <h6 class="text-uppercase mb-0">Friday</h6>
-                                <span class="text-uppercase">09 AM - 11 PM</span>
+                                <span class="text-uppercase">{{$data['workings'][0]["friday1"]}} AM - {{$data['workings'][0]["friday2"]}} PM</span>
                             </div>
                             <div class="d-flex justify-content-between border-bottom py-2">
                                 <h6 class="text-uppercase mb-0">Saturday</h6>
-                                <span class="text-uppercase">09 AM - 11 PM</span>
+                                <span class="text-uppercase">{{$data['workings'][0]["saturday1"]}} AM - {{$data['workings'][0]["saturday2"]}} PM</span>
                             </div>
                             <div class="d-flex justify-content-between border-bottom py-2">
                                 <h6 class="text-uppercase mb-0">Sunday</h6>
-                                <span class="text-uppercase">09 AM - 11 PM</span>
+                                <span class="text-uppercase">{{$data['workings'][0]["sunday1"]}} AM - {{$data['workings'][0]["sunday2"]}} PM</span>
                             </div>
                         </div>
                     </div>
@@ -382,13 +382,14 @@
                     <span class="fs-5">Great experience at Cutting Crew Mans Salon, wonderful customer service, friendly
                         people and amazing styles!</span>
                 </div>
+                @foreach($data['testimonials'] as $testimonial)
                 <div class="testimonial-item text-center"
-                    data-dot="<img class='img-fluid' src='img/testimonial3.png' alt=''>">
-                    <h4 class="text-uppercase">Affaq Shah</h4>
-                    <p class="text-primary">Trader</p>
-                    <span class="fs-5">Great place! I have been having my hair done here for over 4 years. Great
-                        cuts/styles, colors , and very personal customer service. Highly recommended!</span>
+                    data-dot="<img class='img-fluid' src='{{asset('img').'/'.$testimonial['image']}}' alt=''>">
+                    <h4 class="text-uppercase">{{$testimonial['name']}}</h4>
+                    <p class="text-primary">{{$testimonial['designation']}}</p>
+                    <span class="fs-5">{{$testimonial['comment']}}</span>
                 </div>
+                @endforeach
             </div>
         </div>
     </div>

@@ -81,20 +81,6 @@
                         <a class="btn btn-square" href=""><i class="fa fa-plus text-primary"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item position-relative overflow-hidden bg-secondary d-flex h-100 p-5 ps-0">
-                        <div class="bg-dark d-flex flex-shrink-0 align-items-center justify-content-center"
-                            style="width: 60px; height: 60px;">
-                            <img class="img-fluid" src="img/facial.png" alt="">
-                        </div>
-                        <div class="ps-4">
-                            <h3 class="text-uppercase mb-3">Facials</h3>
-                            <p>Essential facials and peels<br>Sports massage<br>Deep tissue massage</p>
-                            <span class="text-uppercase text-primary">From Rs. 1000</span>
-                        </div>
-                        <a class="btn btn-square" href=""><i class="fa fa-plus text-primary"></i></a>
-                    </div>
-                </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="service-item position-relative overflow-hidden bg-secondary d-flex h-100 p-5 ps-0">
                         <div class="bg-dark d-flex flex-shrink-0 align-items-center justify-content-center"
@@ -109,11 +95,27 @@
                         <a class="btn btn-square" href=""><i class="fa fa-plus text-primary"></i></a>
                     </div>
                 </div>
+                @foreach($data['services'] as $service)
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item position-relative overflow-hidden bg-secondary d-flex h-100 p-5 ps-0">
+                        <div class="bg-dark d-flex flex-shrink-0 align-items-center justify-content-center"
+                            style="width: 60px; height: 60px;">
+                            <img class="img-fluid" src="{{asset('img').'/'.$service['logo']}}" alt="">
+                        </div>
+                        <div class="ps-4">
+                            <h3 class="text-uppercase mb-3">{{$service["name"]}}</h3>
+                            <p>{{$service["description"]}}</p>
+                            <span class="text-uppercase text-primary">From Rs. {{$service["price"]}}</span>
+                        </div>
+                        <a class="btn btn-square" href=""><i class="fa fa-plus text-primary"></i></a>
+                    </div>
+                </div>
+                @endforeach
             </div>
             <div class="row">
                 <div class="col-lg-4"></div>
                 <div class="col-lg-4">
-                    <a href="appointment.html" class="btn btn-primary rounded-0 py-2 px-lg-4 d-none d-lg-block mt-5">Book
+                    <a href="{{URL('/appointment')}}" class="btn btn-primary rounded-0 py-2 px-lg-4 d-none d-lg-block mt-5 btn-cc3">Book
                         Appointment</a>
                 </div>
                 <div class="col-lg-4"></div>
@@ -146,13 +148,14 @@
                     <span class="fs-5">Great experience at Cutting Crew Mans Salon, wonderful customer service, friendly
                         people and amazing styles!</span>
                 </div>
+                @foreach($data['testimonials'] as $testimonial)
                 <div class="testimonial-item text-center"
-                    data-dot="<img class='img-fluid' src='img/testimonial3.png' alt=''>">
-                    <h4 class="text-uppercase">Affaq Shah</h4>
-                    <p class="text-primary">Trader</p>
-                    <span class="fs-5">Great place! I have been having my hair done here for over 4 years. Great
-                        cuts/styles, colors , and very personal customer service. Highly recommended!</span>
+                    data-dot="<img class='img-fluid' src='{{asset('img').'/'.$testimonial['image']}}' alt=''>">
+                    <h4 class="text-uppercase">{{$testimonial['name']}}</h4>
+                    <p class="text-primary">{{$testimonial['designation']}}</p>
+                    <span class="fs-5">{{$testimonial['comment']}}</span>
                 </div>
+                @endforeach
             </div>
         </div>
     </div>

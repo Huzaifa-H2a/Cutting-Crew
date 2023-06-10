@@ -22,45 +22,50 @@
                 <h1 class="text-uppercase">let's not wait for the "perfect look"</h1>
                 <p class="text-primary">Book Your Appointment To Save Salon Rush</p>
             </div>
-            <form>
+            <form method="post" action="{{url('appointment')}}">
+            @csrf
                 <div class="row">
                     <div class="col-md-6">
                         <div class="mb-4">
                             <label for="" class="form-label">Name</label>
-                            <input type="text" class="form-control bg-secondary" id="" placeholder="Enter Your Name">
+                            <input type="text" class="form-control bg-secondary btn-bdrclr" id="" placeholder="Enter Your Name" value="{{old('name')}}" name="name" required autofocus>
+                            @error('name')<span class="text-danger">{{$message}}</span>@enderror
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="mb-4">
                             <label for="" class="form-label">Phone</label>
-                            <input type="number" class="form-control bg-secondary" id=""
-                                placeholder="Enter Phone Number">
+                            <input type="number" class="form-control bg-secondary btn-bdrclr" id=""
+                                placeholder="Enter Phone Number" value="{{old('phone')}}" name="phone" required>
+                                @error('phone')<span class="text-danger">{{$message}}</span>@enderror
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="mb-4">
                             <label for="" class="form-label">Email Address</label>
-                            <input type="email" class="form-control bg-secondary" id="" placeholder="Enter Your Email">
-                        </div>
+                            <input type="email" class="form-control bg-secondary btn-bdrclr" id="" placeholder="Enter Your Email" value="{{old('email')}}" name="email" required>
+                            @error('email')<span class="text-danger">{{$message}}</span>@enderror                        </div>
                     </div>
                     <div class="col-md-6">
                         <div class="mb-4">
                             <label for="" class="form-label">Services</label>
-                            <select class="form-select bg-secondary" aria-label="Default select example">
+                            <select class="form-select bg-secondary btn-bdrclr" aria-label="Default select example" id="" value="{{old('service')}}" name="service" required>
                                 <option class="bg-secondary text-white">Select Service</option>
-                                <option value="400" class="bg-secondary text-white">Hair Cut</option>
-                                <option value="200" class="bg-secondary text-white">Beard Trim</option>
-                                <option value="200" class="bg-secondary text-white">Mans Shave</option>
-                                <option value="1000" class="bg-secondary text-white">Hair Dyeing</option>
-                                <option value="1000" class="bg-secondary text-white">Facials</option>
-                                <option value="1500" class="bg-secondary text-white">Nails</option>
+                                <option value="Hair Cut" class="bg-secondary text-white">Hair Cut</option>
+                                <option value="Beard Trim" class="bg-secondary text-white">Beard Trim</option>
+                                <option value="Mans Shave" class="bg-secondary text-white">Mans Shave</option>
+                                <option value="Hair Dyeing" class="bg-secondary text-white">Hair Dyeing</option>
+                                <option value="Facials" class="bg-secondary text-white">Facials</option>
+                                <option value="Nails" class="bg-secondary text-white">Nails</option>
                             </select>
+                            @error('service')<span class="text-danger">{{$message}}</span>@enderror
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="mb-4">
                             <label for="" class="form-label">Appointment Date</label>
-                            <input type="date" class="form-control bg-secondary" id="">
+                            <input type="date" class="form-control bg-secondary btn-bdrclr" id="" value="{{old('date')}}" name="date" required>
+                            @error('date')<span class="text-danger">{{$message}}</span>@enderror
                         </div>
                     </div>
                 </div>
@@ -68,14 +73,15 @@
                     <div class="col-md-6">
                         <div class="mb-4">
                             <label for="" class="form-label">Appointment Time</label>
-                            <input type="time" class="form-control bg-secondary" id="">
+                            <input type="time" class="form-control bg-secondary btn-bdrclr" id="" value="{{old('time')}}" name="time" required>
+                            @error('time')<span class="text-danger">{{$message}}</span>@enderror
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
                         <div class="mb-5 text-center">
-                            <button type="submit" class="btn btn-primary mt-4 btn-lg">Book Appointment</button>
+                            <button type="submit" class="btn btn-primary mt-4 btn-lg btn-cc3">Book Appointment</button>
                         </div>
                     </div>
                     <div class="text-center">

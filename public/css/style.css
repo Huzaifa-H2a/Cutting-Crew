@@ -329,6 +329,30 @@
 }
 
 .btn-cc3:hover {
-    background-color: blue;
+    background-color: DarkBlue;
+    color: white;
+    border: darkblue;
+}
+
+.btn-cc3:active {
+    background-color: darkblue;
+    border: darkblue;
+}
+
+.btn-cc3:visited {
+    background-color: darkblue;
+    border: darkblue;
+}
+
+.btn-cc3:focus {
+    background-color: darkblue;
+    border: darkblue;
+}
+
+.btn-bdrclr:focus {
+    border-color: blue;
+}
+
+.btn-bdrclr:active {
     color: green;
 }

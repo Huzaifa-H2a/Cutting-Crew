@@ -43,13 +43,15 @@
                                 <span class="text-uppercase text-primary">Rs. 1000</span>
                             </div>
                             <div class="d-flex justify-content-between border-bottom py-2">
-                                <h6 class="text-uppercase mb-0">facials</h6>
-                                <span class="text-uppercase text-primary">Rs. 1000</span>
-                            </div>
-                            <div class="d-flex justify-content-between py-2">
                                 <h6 class="text-uppercase mb-0">nails</h6>
                                 <span class="text-uppercase text-primary">Rs. 1500</span>
                             </div>
+                            @foreach($data['services'] as $service)
+                            <div class="d-flex justify-content-between border-bottom py-2">
+                                <h6 class="text-uppercase mb-0">{{$service["name"]}}</h6>
+                                <span class="text-uppercase text-primary">Rs. {{$service["price"]}}</span>
+                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>

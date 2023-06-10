@@ -31,34 +31,34 @@
                     <p class="d-inline-flex bg-dark text-primary py-1 px-4 me-auto">Our Working Hours</p>
                     <h1 class="text-uppercase mb-4">Our Professionals Are Waiting For You</h1>
                     <div>
-                        <div class="d-flex justify-content-between border-bottom py-2">
+                    <div class="d-flex justify-content-between border-bottom py-2">
                             <h6 class="text-uppercase mb-0">Monday</h6>
-                            <span class="text-uppercase">09 AM - 11 PM</span>
-                        </div>
-                        <div class="d-flex justify-content-between border-bottom py-2">
-                            <h6 class="text-uppercase mb-0">Tuesday</h6>
-                            <span class="text-uppercase">09 AM - 11 PM</span>
-                        </div>
-                        <div class="d-flex justify-content-between border-bottom py-2">
-                            <h6 class="text-uppercase mb-0">Wednesday</h6>
-                            <span class="text-uppercase">09 AM - 11 PM</span>
-                        </div>
-                        <div class="d-flex justify-content-between border-bottom py-2">
-                            <h6 class="text-uppercase mb-0">Thursday</h6>
-                            <span class="text-uppercase">09 AM - 11 PM</span>
-                        </div>
-                        <div class="d-flex justify-content-between border-bottom py-2">
-                            <h6 class="text-uppercase mb-0">Friday</h6>
-                            <span class="text-uppercase">09 AM - 11 PM</span>
-                        </div>
-                        <div class="d-flex justify-content-between border-bottom py-2">
-                            <h6 class="text-uppercase mb-0">Saturday</h6>
-                            <span class="text-uppercase">09 AM - 11 PM</span>
-                        </div>
-                        <div class="d-flex justify-content-between border-bottom py-2">
-                            <h6 class="text-uppercase mb-0">Sunday</h6>
-                            <span class="text-uppercase">09 AM - 11 PM</span>
-                        </div>
+                            <span class="text-uppercase">{{$data['workings'][0]["monday1"]}} AM - {{$data['workings'][0]["monday2"]}} PM</span>
+                            </div>
+                            <div class="d-flex justify-content-between border-bottom py-2">
+                                <h6 class="text-uppercase mb-0">Tuesday</h6>
+                                <span class="text-uppercase">{{$data['workings'][0]["tuesday1"]}} AM - {{$data['workings'][0]["tuesday2"]}} PM</span>
+                            </div>
+                            <div class="d-flex justify-content-between border-bottom py-2">
+                                <h6 class="text-uppercase mb-0">Wednesday</h6>
+                                <span class="text-uppercase">{{$data['workings'][0]["wednesday1"]}} AM - {{$data['workings'][0]["wednesday2"]}} PM</span>
+                            </div>
+                            <div class="d-flex justify-content-between border-bottom py-2">
+                                <h6 class="text-uppercase mb-0">Thursday</h6>
+                                <span class="text-uppercase">{{$data['workings'][0]["thursday1"]}} AM - {{$data['workings'][0]["thursday2"]}} PM</span>
+                            </div>
+                            <div class="d-flex justify-content-between border-bottom py-2">
+                                <h6 class="text-uppercase mb-0">Friday</h6>
+                                <span class="text-uppercase">{{$data['workings'][0]["friday1"]}} AM - {{$data['workings'][0]["friday2"]}} PM</span>
+                            </div>
+                            <div class="d-flex justify-content-between border-bottom py-2">
+                                <h6 class="text-uppercase mb-0">Saturday</h6>
+                                <span class="text-uppercase">{{$data['workings'][0]["saturday1"]}} AM - {{$data['workings'][0]["saturday2"]}} PM</span>
+                            </div>
+                            <div class="d-flex justify-content-between border-bottom py-2">
+                                <h6 class="text-uppercase mb-0">Sunday</h6>
+                                <span class="text-uppercase">{{$data['workings'][0]["sunday1"]}} AM - {{$data['workings'][0]["sunday2"]}} PM</span>
+                            </div>
                     </div>
                 </div>
             </div>
