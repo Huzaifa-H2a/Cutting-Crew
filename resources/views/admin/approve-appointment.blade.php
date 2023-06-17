@@ -39,12 +39,13 @@
                         <td>{{$appointment["date"]}}</td>
                         <td>{{$appointment["time"]}}</td>
                         <td>{{date('d-m-Y', strtotime($appointment["created_at"]))}}</td>
-                        <td><p class="text-warning mt-3">Pending</p></td>
-                        <td><a href="{{url('/admin/approve-appointment/' . $appointment['id'])}}" class="btn rounded-pill btn-icon btn-primary">
-                              <span class="tf-icons bx bx-check"></span></a>
-                              <a href="{{url('/admin/reject-appointment/' . $appointment['id'])}}" class="btn rounded-pill btn-icon btn-danger">
+                        <td><p class="text-success mt-3">Approved</p></td>
+                        <td>
+                         <!-- <a href="{{url('/admin/approve-appointment/' . $appointment['id'])}}" class="btn rounded-pill btn-icon btn-primary">
+                              <span class="tf-icons bx bx-check"></span></a> -->
+                         <a href="{{url('/admin/reject-appointment/' . $appointment['id'])}}" class="btn rounded-pill btn-icon btn-danger">
                               <span class="tf-icons bx bx-x"></span></a>
-                            </td>
+                        </td>
                       </tr>
                       @endforeach
                     </tbody>

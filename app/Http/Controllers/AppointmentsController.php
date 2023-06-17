@@ -46,4 +46,10 @@ class AppointmentsController extends Controller
 
         return redirect('/admin/appointment');
     }
+
+    function approve_appointment($id) {
+        $appointments = Appointment::find($id)->toArray();
+        return view ('admin/appointment')->with('appointment', $appointments);
+    }
+
 }

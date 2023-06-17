@@ -40,6 +40,7 @@ Route::get('/appointment', [AppointmentsController::class, 'appointment']);
 Route::post('/appointment', [AppointmentsController::class, 'add_appointment']);
 Route::get('/admin/appointment', [AppointmentsController::class, 'dash_appointment']);
 Route::get('/admin/reject-appointment/{id}', [AppointmentsController::class, 'reject_appointment']);
+Route::get('/admin/approve-appointment/{id}', [AppointmentsController::class, 'approve_appointment']);
 
 
 
