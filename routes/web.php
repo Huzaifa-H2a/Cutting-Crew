@@ -11,6 +11,7 @@ use App\Http\Controllers\BarbersController;
 use App\Http\Controllers\WorkingsController;
 use App\Http\Controllers\TestimonialsController;
 use App\Http\Controllers\AppointmentsController;
+use App\Http\Controllers\ContactsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,7 +35,11 @@ Route::get('/price', [WebsiteController::class, 'price']);
 
 Route::get('/open', [WebsiteController::class, 'open']);
 
-Route::get('/contact', [WebsiteController::class, 'contact']);
+Route::get('/contact', [ContactsController::class, 'contact']);
+Route::post('/contact', [ContactsController::class, 'add_contact']);
+Route::get('/admin/contact', [ContactsController::class, 'dash_contact']);
+Route::get('/admin/resolve-contact/{id}', [ContactsController::class, 'resolve_contact']);
+Route::get('/admin/delete-contact/{id}', [ContactsController::class, 'delete_contact']);
 
 Route::get('/appointment', [AppointmentsController::class, 'appointment']);
 Route::post('/appointment', [AppointmentsController::class, 'add_appointment']);
@@ -62,11 +67,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/dashboard', [DashboardController::class, 'dashboard']);
     
     Route::get('/admin/settings', [SettingsController::class, 'settings']);
-    
     Route::post('/admin/settings', [SettingsController::class, 'add_settings']);
     
     Route::get('/admin/about', [AboutsController::class, 'about']);
-    
     Route::post('/admin/about', [AboutsController::class, 'add_about']);
     
     Route::get('/admin/services', [ServicesController::class, 'services']);
@@ -84,7 +87,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/delete-barber/{id}', [BarbersController::class, 'delete_barber']);
     
     Route::get('/admin/working', [WorkingsController::class, 'working']);
-    
     Route::post('/admin/working', [WorkingsController::class, 'add_working']);
     
     Route::get('/admin/testimonials', [TestimonialsController::class, 'testimonials']);

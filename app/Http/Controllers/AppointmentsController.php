@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Appointment;
 use App\Models\Setting;
+use App\Models\Service;
+use DB;
 
 class AppointmentsController extends Controller
 {
@@ -15,6 +17,7 @@ class AppointmentsController extends Controller
      
     function appointment() {
         $data['settings'] = Setting::all()->toArray();
+        $data['services'] = Service::all()->toArray();
         return view('appointment')->with('data', $data);
     }
 
@@ -33,6 +36,7 @@ class AppointmentsController extends Controller
         $appointments->phone = $request["phone"];
         $appointments->email = $request["email"];
         $appointments->service = $request["service"];
+        $appointments->status = 'Pending';
         $appointments->date = $request["date"];
         $appointments->time = $request["time"];
         $appointments->save();
@@ -48,8 +52,10 @@ class AppointmentsController extends Controller
     }
 
     function approve_appointment($id) {
-        $appointments = Appointment::find($id)->toArray();
-        return view ('admin/appointment')->with('appointment', $appointments);
+        $appointments = DB::table('appointments')
+        ->where('id', $id)
+        ->update(array('status' => 'Approved'));
+        return redirect('/admin/appointment');
     }
 
 }

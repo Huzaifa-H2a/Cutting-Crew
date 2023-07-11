@@ -50,13 +50,10 @@
                         <div class="mb-4">
                             <label for="" class="form-label">Services</label>
                             <select class="form-select bg-secondary btn-bdrclr" aria-label="Default select example" id="" value="{{old('service')}}" name="service" required>
-                                <option class="bg-secondary text-white">Select Service</option>
-                                <option value="Hair Cut" class="bg-secondary text-white">Hair Cut</option>
-                                <option value="Beard Trim" class="bg-secondary text-white">Beard Trim</option>
-                                <option value="Mans Shave" class="bg-secondary text-white">Mans Shave</option>
-                                <option value="Hair Dyeing" class="bg-secondary text-white">Hair Dyeing</option>
-                                <option value="Facials" class="bg-secondary text-white">Facials</option>
-                                <option value="Nails" class="bg-secondary text-white">Nails</option>
+                            <option class="bg-secondary text-white">Select Service</option>
+                            @foreach($data['services'] as $service)
+                                <option class="bg-secondary text-white">{{$service["name"]}}</option>
+                                @endforeach
                             </select>
                             @error('service')<span class="text-danger">{{$message}}</span>@enderror
                         </div>

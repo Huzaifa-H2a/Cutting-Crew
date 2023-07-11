@@ -4,46 +4,42 @@
 <div class="container-xxl flex-grow-1 container-p-y">
     <div class="row">
             <div class="col-md-9">
-              <h4 class="fw-bold py-3 mb-4 ms-2">Appointments</h4>
+              <h4 class="fw-bold py-3 mb-4 ms-2">Contacts</h4>
             </div>
     </div>
               <div class="row">
                 <div class="col-md-12">
                 <!-- Basic Bootstrap Table -->
               <div class="card">
-                <h5 class="card-header">Appointments List</h5>
+                <h5 class="card-header">Contacts List</h5>
                 <div class="table-responsive text-nowrap">
                   <table class="table">
                     <thead>
                       <tr>
                         <th>ID</th>
                         <th>Client Name</th>
-                        <th>Phone No.</th>
                         <th>Email</th>
-                        <th>Service</th>
-                        <th>Appointment Date</th>
-                        <th>Appointment Time</th>
-                        <th>Booking Date</th>
+                        <th>Subject</th>
+                        <th>Message</th>
+                        <th>Contact Date</th>
                         <th>Status</th>
                         <th>Action</th>
                       </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
-                      @foreach($appointments as $appointment)
+                      @foreach($contacts as $contact)
                       <tr>
-                        <td>{{$appointment["id"]}}</td>
-                        <td>{{$appointment["name"]}}</td>
-                        <td>{{$appointment["phone"]}}</td>
-                        <td>{{$appointment["email"]}}</td>
-                        <td>{{$appointment["service"]}}</td>
-                        <td>{{$appointment["date"]}}</td>
-                        <td>{{$appointment["time"]}}</td>
-                        <td>{{date('d-m-Y', strtotime($appointment["created_at"]))}}</td>
-                        <td>{{$appointment["status"]}}</td>
-                        <td>@if ($appointment["status"] == 'pending') <a href="{{url('/admin/approve-appointment/' . $appointment['id'])}}" class="btn rounded-pill btn-icon btn-primary">
+                        <td>{{$contact["id"]}}</td>
+                        <td>{{$contact["name"]}}</td>
+                        <td>{{$contact["email"]}}</td>
+                        <td>{{$contact["subject"]}}</td>
+                        <td>{{$contact["message"]}}</td>
+                        <td>{{date('d-m-Y', strtotime($contact["created_at"]))}}</td>
+                        <td>{{$contact["status"]}}</td>
+                        <td>@if ($contact["status"] == 'Pending')<a href="{{url('/admin/resolve-contact/' . $contact['id'])}}" class="btn rounded-pill btn-icon btn-primary">
                               <span class="tf-icons bx bx-check"></span></a>
                               @endif
-                              <a href="{{url('/admin/reject-appointment/' . $appointment['id'])}}" class="btn rounded-pill btn-icon btn-danger">
+                              <a href="{{url('/admin/delete-contact/' . $contact['id'])}}" class="btn rounded-pill btn-icon btn-danger">
                               <span class="tf-icons bx bx-x"></span></a>
                             </td>
                       </tr>

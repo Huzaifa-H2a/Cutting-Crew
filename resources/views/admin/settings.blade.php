@@ -18,7 +18,7 @@
                         @csrf
                         <div class="mb-3">
                           <label class="form-label" for="basic-default-fullname">Website Name</label>
-                          <input type="text" class="form-control" value="{{old('website_name')}}" name="website_name" id="basic-default-fullname" required autofocus/>
+                          <input type="text" class="form-control" value="{{isset($settings->name)}}" name="website_name" id="basic-default-fullname" required autofocus/>
                           @error('website_name')<span class="text-danger">{{$message}}</span>@enderror
                         </div>
                         <div class="mb-3">

@@ -48,10 +48,10 @@ class WebsiteController extends Controller
         return view('open')->with('data', $data);
     }
 
-    function contact() {
-        $data['settings'] = Setting::all()->toArray();
-        return view('contact')->with('data', $data);
-    }
+    // function contact() {
+    //     $data['settings'] = Setting::all()->toArray();
+    //     return view('contact')->with('data', $data);
+    // }
 
     // function appointment() {
     //     $data['settings'] = Setting::all()->toArray();

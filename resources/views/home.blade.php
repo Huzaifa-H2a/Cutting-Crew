@@ -87,76 +87,6 @@
                 <h1 class="text-uppercase">What We Provide</h1>
             </div>
             <div class="row g-4">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item position-relative overflow-hidden bg-secondary d-flex h-100 p-5 ps-0">
-                        <div class="bg-dark d-flex flex-shrink-0 align-items-center justify-content-center"
-                            style="width: 60px; height: 60px;">
-                            <img class="img-fluid" src="img/haircut.png" alt="">
-                        </div>
-                        <div class="ps-4">
-                            <h3 class="text-uppercase mb-3">Haircut</h3>
-                            <p>Cut and style<br>Hair treatments<br>Scalp treatments</p>
-                            <span class="text-uppercase text-primary">From RS. 400</span>
-                        </div>
-                        <a class="btn btn-square" href=""><i class="fa fa-plus text-primary"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item position-relative overflow-hidden bg-secondary d-flex h-100 p-5 ps-0">
-                        <div class="bg-dark d-flex flex-shrink-0 align-items-center justify-content-center"
-                            style="width: 60px; height: 60px;">
-                            <img class="img-fluid" src="img/beard-trim.png" alt="">
-                        </div>
-                        <div class="ps-4">
-                            <h3 class="text-uppercase mb-3">Beard Trim</h3>
-                            <p>Trim according to different style options available</p>
-                            <span class="text-uppercase text-primary">From RS. 200</span>
-                        </div>
-                        <a class="btn btn-square" href=""><i class="fa fa-plus text-primary"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item position-relative overflow-hidden bg-secondary d-flex h-100 p-5 ps-0">
-                        <div class="bg-dark d-flex flex-shrink-0 align-items-center justify-content-center"
-                            style="width: 60px; height: 60px;">
-                            <img class="img-fluid" src="img/mans-shave.png" alt="">
-                        </div>
-                        <div class="ps-4">
-                            <h3 class="text-uppercase mb-3">Mans Shave</h3>
-                            <p>Traditional straight razor shaves<br>Hot towels</p>
-                            <span class="text-uppercase text-primary">From Rs. 200</span>
-                        </div>
-                        <a class="btn btn-square" href=""><i class="fa fa-plus text-primary"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item position-relative overflow-hidden bg-secondary d-flex h-100 p-5 ps-0">
-                        <div class="bg-dark d-flex flex-shrink-0 align-items-center justify-content-center"
-                            style="width: 60px; height: 60px;">
-                            <img class="img-fluid" src="img/hair-dyeing.png" alt="">
-                        </div>
-                        <div class="ps-4">
-                            <h3 class="text-uppercase mb-3">Hair Dyeing</h3>
-                            <p>One step hair color<br>Highlights<br>Corrective color</p>
-                            <span class="text-uppercase text-primary">From Rs. 1000</span>
-                        </div>
-                        <a class="btn btn-square" href=""><i class="fa fa-plus text-primary"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item position-relative overflow-hidden bg-secondary d-flex h-100 p-5 ps-0">
-                        <div class="bg-dark d-flex flex-shrink-0 align-items-center justify-content-center"
-                            style="width: 60px; height: 60px;">
-                            <img class="img-fluid" src="img/nail.png" alt="">
-                        </div>
-                        <div class="ps-4">
-                            <h3 class="text-uppercase mb-3">Nails</h3>
-                            <p>Manicures<br>Pedicures</p>
-                            <span class="text-uppercase text-primary">From Rs. 1500</span>
-                        </div>
-                        <a class="btn btn-square" href=""><i class="fa fa-plus text-primary"></i></a>
-                    </div>
-                </div>
                 @foreach($data['services'] as $service)
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="service-item position-relative overflow-hidden bg-secondary d-flex h-100 p-5 ps-0">
@@ -188,26 +118,6 @@
                         <p class="d-inline-flex bg-dark text-primary py-1 px-4 me-auto">Our Plans & Prices</p>
                         <h1 class="text-uppercase mb-4">Check Out Our Services And Prices</h1>
                         <div>
-                            <div class="d-flex justify-content-between border-bottom py-2">
-                                <h6 class="text-uppercase mb-0">Haircut</h6>
-                                <span class="text-uppercase text-primary">Rs. 400</span>
-                            </div>
-                            <div class="d-flex justify-content-between border-bottom py-2">
-                                <h6 class="text-uppercase mb-0">Beard Trim</h6>
-                                <span class="text-uppercase text-primary">Rs. 200</span>
-                            </div>
-                            <div class="d-flex justify-content-between border-bottom py-2">
-                                <h6 class="text-uppercase mb-0">Mans Shave</h6>
-                                <span class="text-uppercase text-primary">Rs. 200</span>
-                            </div>
-                            <div class="d-flex justify-content-between border-bottom py-2">
-                                <h6 class="text-uppercase mb-0">Hair Dyeing</h6>
-                                <span class="text-uppercase text-primary">Rs. 1000</span>
-                            </div>
-                            <div class="d-flex justify-content-between border-bottom py-2">
-                                <h6 class="text-uppercase mb-0">nails</h6>
-                                <span class="text-uppercase text-primary">Rs. 1500</span>
-                            </div>
                             @foreach($data['services'] as $service)
                             <div class="d-flex justify-content-between border-bottom py-2">
                                 <h6 class="text-uppercase mb-0">{{$service["name"]}}</h6>
@@ -236,54 +146,6 @@
                 <h1 class="text-uppercase">Meet Our Barbers</h1>
             </div>
             <div class="row g-4">
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/team1.png" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="bg-secondary text-center p-4">
-                            <h5 class="text-uppercase">Amir Khan</h5>
-                            <span class="text-primary">Owner | Senior Barber</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/team2.png" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="bg-secondary text-center p-4">
-                            <h5 class="text-uppercase">Ibtisam Nazir</h5>
-                            <span class="text-primary">Manager | Senior Stylist</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/team3.png" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="bg-secondary text-center p-4">
-                            <h5 class="text-uppercase">Wahaab Ahmed</h5>
-                            <span class="text-primary">Senior Stylist</span>
-                        </div>
-                    </div>
-                </div>
                 @foreach($data['barbers'] as $barber)
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="team-item">
@@ -367,21 +229,6 @@
                 <h1 class="text-uppercase">What Our Clients Say!</h1>
             </div>
             <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-                <div class="testimonial-item text-center"
-                    data-dot="<img class='img-fluid' src='img/testimonial1.png' alt=''>">
-                    <h4 class="text-uppercase">Umer Aziz</h4>
-                    <p class="text-primary">National Sales Manager</p>
-                    <span class="fs-5">If you’re looking for “the one” give Cutting Crew a try. They will listen to you
-                        but also listen to them. They does know what they doing and is the “master “ I was looking
-                        for.”</span>
-                </div>
-                <div class="testimonial-item text-center"
-                    data-dot="<img class='img-fluid' src='img/testimonial2.png' alt=''>">
-                    <h4 class="text-uppercase">Malik Fahad</h4>
-                    <p class="text-primary">Electrical Engineer</p>
-                    <span class="fs-5">Great experience at Cutting Crew Mans Salon, wonderful customer service, friendly
-                        people and amazing styles!</span>
-                </div>
                 @foreach($data['testimonials'] as $testimonial)
                 <div class="testimonial-item text-center"
                     data-dot="<img class='img-fluid' src='{{asset('img').'/'.$testimonial['image']}}' alt=''>">

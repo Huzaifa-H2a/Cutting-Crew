@@ -25,33 +25,37 @@
                     <div class="bg-secondary p-5">
                         <p class="d-inline-block bg-dark text-primary py-1 px-4">Contact Us</p>
                         <h1 class="text-uppercase mb-4">Have Any Query? Please Contact Us!</h1>
-                        <form>
+                        <form method="post" action="{{url('contact')}}">
+                        @csrf
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control bg-transparent" id="name"
-                                            placeholder="Your Full Name">
+                                        <input type="text" class="form-control bg-transparent btn-bdrclr" id="name"
+                                            placeholder="Your Full Name" value="{{old('name')}}" name="name" required>
                                         <label for="name">Your Name</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control bg-transparent" id="email"
-                                            placeholder="Your Email">
+                                        <input type="email" class="form-control bg-transparent btn-bdrclr" id="email"
+                                            placeholder="Your Email" value="{{old('email')}}" name="email" required>
+                                            @error('email')<span class="text-danger">{{$message}}</span>@enderror
                                         <label for="email">Your Email</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control bg-transparent" id="subject"
-                                            placeholder="Subject">
+                                        <input type="text" class="form-control bg-transparent btn-bdrclr" id="subject"
+                                            placeholder="Subject" value="{{old('subject')}}" name="subject" required>
+                                            @error('subject')<span class="text-danger">{{$message}}</span>@enderror
                                         <label for="subject">Subject</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control bg-transparent" placeholder="Leave a message here"
-                                            id="message" style="height: 100px"></textarea>
+                                        <textarea class="form-control bg-transparent btn-bdrclr" placeholder="Leave a message here"
+                                            id="message" style="height: 100px" value="{{old('message')}}" name="message" required></textarea>
+                                            @error('message')<span class="text-danger">{{$message}}</span>@enderror
                                         <label for="message">Message</label>
                                     </div>
                                 </div>
