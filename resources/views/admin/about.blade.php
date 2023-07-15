@@ -18,22 +18,22 @@
                         @csrf
                         <div class="mb-3">
                           <label class="form-label" for="basic-default-fullname">Add Description</label>
-                          <textarea class="form-control" value="{{old('description')}}" name="description" id="basic-default-fullname" required autofocus></textarea>
+                          <textarea class="form-control" value="" name="description" id="basic-default-fullname" required autofocus>{{$about[0]->description}}</textarea>
                           @error('description')<span class="text-danger">{{$message}}</span>@enderror
                         </div>
                         <div class="mb-3">
                           <label class="form-label" for="basic-default-fullname">Add Experience</label>
-                          <input type="number" class="form-control" value="{{old('experience')}}" name="experience" id="basic-default-fullname" required/>
+                          <input type="number" class="form-control" value="{{$about[0]->experience}}" name="experience" id="basic-default-fullname" required/>
                           @error('experience')<span class="text-danger">{{$message}}</span>@enderror
                         </div>
                         <div class="mb-3">
                           <label class="form-label" for="basic-default-fullname">Add Since Years</label>
-                          <input type="number" class="form-control" value="{{old('since')}}" name="since" id="basic-default-fullname" required/>
+                          <input type="number" class="form-control" value="{{$about[0]->since}}" name="since" id="basic-default-fullname" required/>
                           @error('since')<span class="text-danger">{{$message}}</span>@enderror
                         </div>
                         <div class="mb-3">
                           <label class="form-label" for="basic-default-fullname">Add No. of Clients</label>
-                          <input type="number" class="form-control" value="{{old('client')}}" name="client" id="basic-default-fullname" required/>
+                          <input type="number" class="form-control" value="{{$about[0]->client}}" name="client" id="basic-default-fullname" required/>
                           @error('client')<span class="text-danger">{{$message}}</span>@enderror
                         </div>
                         <button type="submit" class="btn btn-primary">Change Settings</button>

@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\About;
+use Illuminate\Support\Facades\DB;
 
 class AboutsController extends Controller
 {
     function about() {
-        $abouts = About::all()->toArray();
+        $abouts = DB::table('abouts')->select('*')->get();
         return view ('admin/about')->with('about', $abouts);
     }
 

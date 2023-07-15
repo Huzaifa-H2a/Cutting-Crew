@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Working;
+use Illuminate\Support\Facades\DB;
 
 class WorkingsController extends Controller
 {
     function working() {
-        $workings = Working::all()->toArray();
+        $workings = DB::table('workings')->select('*')->get();
         return view ('admin/working')->with('workings', $workings);
     }
 

@@ -40,7 +40,7 @@
                         <td>{{$appointment["time"]}}</td>
                         <td>{{date('d-m-Y', strtotime($appointment["created_at"]))}}</td>
                         <td>{{$appointment["status"]}}</td>
-                        <td>@if ($appointment["status"] == 'pending') <a href="{{url('/admin/approve-appointment/' . $appointment['id'])}}" class="btn rounded-pill btn-icon btn-primary">
+                        <td>@if ($appointment["status"] == 'Pending') <a href="{{url('/admin/approve-appointment/' . $appointment['id'])}}" class="btn rounded-pill btn-icon btn-primary">
                               <span class="tf-icons bx bx-check"></span></a>
                               @endif
                               <a href="{{url('/admin/reject-appointment/' . $appointment['id'])}}" class="btn rounded-pill btn-icon btn-danger">

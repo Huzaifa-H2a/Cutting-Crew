@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Setting;
+use Illuminate\Support\Facades\DB;
 
 class SettingsController extends Controller
 {
     function settings() {
-        $settings = Setting::all()->toArray();
+        $settings = DB::table('settings')->select('*')->get();
         return view ('admin/settings')->with('settings', $settings);
     }
 

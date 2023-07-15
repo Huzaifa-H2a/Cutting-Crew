@@ -114,7 +114,7 @@
                     <div class="d-flex pt-1 m-n1">
                         <a class="btn btn-lg-square btn-dark text-primary m-1" href="{{$data['settings'][0]['twitter']}}"><i
                                 class="fab fa-twitter"></i></a>
-                        <a class="btn btn-lg-square btn-dark text-primary m-1" href="{{$data['settings'][0]['facebook']}}"><i
+                        <a class="btn btn-lg-square btn-dark text-primary m-1" target="_blank" href="{{$data['settings'][0]['facebook']}}"><i
                                 class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-lg-square btn-dark text-primary m-1" href="{{$data['settings'][0]['youtube']}}"><i
                                 class="fab fa-youtube"></i></a>
